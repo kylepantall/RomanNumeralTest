@@ -19,8 +19,8 @@ pairs. One improvement could include ordering the numeric values into pairs.</p>
 <p>The script processes all the pairs:</p>
 <ul>
   <li>MC</li>
- <li><XI</li>
-  </ul>
+ <li>XI</li>
+</ul>
   <p>But disregards the deduction of 1 from 10. For example X - I (10 deduct 1) this is because the script handles the last digit by simply adding this to the final calculation.</p>
   
   <p>I hope to further improve this script, as said previously, by pairing as many values as possible and adding all pairs and individual values remaing. I feel this method would be faster performance-wise but more beneficial for more complex roman numeral values.</p>
