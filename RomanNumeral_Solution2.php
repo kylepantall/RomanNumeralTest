@@ -66,33 +66,30 @@ class RomanNumeral
 
                         array_push($accounted_for, $i);
                         continue;
-
-                    } else {
-
-                        //If next value is less or equal to current value, add them together and increment total by calculation.
-                        //Else, increment total by the subtraction of both values.
-
-                        if ($next_value <= $value){
-                            $total += ($next_value + $value);
-                        } else {
-                            $total += ($next_value - $value);
-                        }
-
-                        //Add both indexes to accounted_for array to prevent re-processing.
-                        array_push($accounted_for, $i);
-                        array_push($accounted_for, $next_letter_index);
                     }
-                } else {
+                    
+                    //If next value is less or equal to current value, add them together and increment total by calculation.
+                    //Else, increment total by the subtraction of both values.
 
-                    //Continue if both indexes are stored within accounted_for.
-                    continue;
+                    if ($next_value <= $value){
+                        $total += ($next_value + $value);
+                    } 
+
+                    if ($next_value > $value) {
+                        $total += ($next_value - $value);
+                    }
+
+                    //Add both indexes to accounted_for array to prevent re-processing.
+                    array_push($accounted_for, $i);
+                    array_push($accounted_for, $next_letter_index);
                 }
-            } else {
-
+                
+            } 
+            
+            if (strlen($this->numeral) <= 1) {
                 //Return value for single roman numeral as no calculation is necessary.
                 return $value;
             }
-
         }
 
         //Return the total.
